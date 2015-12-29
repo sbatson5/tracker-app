@@ -1,0 +1,5 @@
+<section id="game-holder">
+  {{#each movieList key="@index" as |movie|}}
+    {{info-box title=movie.title image=movie.image description=movie.overview}}
+  {{/each}}
+</section>
