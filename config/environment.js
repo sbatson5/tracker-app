@@ -24,15 +24,19 @@ module.exports = function(environment) {
       'script-src': [
           "'self'",
           "http://www.giantbomb.com",
+          "http://api.themoviedb.org"
         ].join(' '),
       'font-src': "'self' data: https://fonts.gstatic.com",
-      'connect-src': "'self' http://www.giantbomb.com",
+      'connect-src': "'self' http://www.giantbomb.com http://api.themoviedb.org",
       'img-src': [
           "'self'",
           "http://www.giantbomb.com",
+          "http://api.themoviedb.org",
+          "*.themoviedb.org",
+          "http://image.tmdb.org",
           "*.giantbomb.com"
         ].join(' '),
-      'style-src': "'self' 'unsafe-inline' http://www.giantbomb.com",
+      'style-src': "'self' 'unsafe-inline' http://www.giantbomb.com http://api.themoviedb.org",
       'media-src': "'self'"
     }
   };
