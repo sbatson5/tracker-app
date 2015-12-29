@@ -1,0 +1,5 @@
+<section id="game-holder">
+  {{#each tvList key="@index" as |show|}}
+    {{info-box title=show.name image=show.image description=show.overview}}
+  {{/each}}
+</section>

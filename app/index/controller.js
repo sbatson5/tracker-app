@@ -7,6 +7,9 @@ export default Ember.Controller.extend({
     },
     searchMovies(value) {
       this.transitionTo('movies', value);
+    },
+    searchTV(value) {
+      this.transitionTo('tv', value);
     }
   }
 });
