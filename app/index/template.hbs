@@ -1,12 +1,33 @@
-<div class="search-box">
-  <h2 class="search-header">Games</h2>
-  {{search-field search=(action "searchGames")}}
-</div>
-<div class="search-box">
-  <h2 class="search-header">Movies</h2>
-  {{search-field search=(action "searchMovies")}}
-</div>
-<div class="search-box">
-  <h2 class="search-header">TV</h2>
-  {{search-field search=(action "searchTV")}}
-</div>
+<section class="clearfix" id="banner-image">
+  <div class="image-container">
+    <div class="vertical-centered">
+      <h1 class="banner-header">Media Tracker</h1>
+      <h2 class="banner-sub-header">Track Games, Movies &amp; TV</h2>
+    </div>
+  </div>
+</section>
+
+<section class="clearfix search-area">
+  <ul class="search-options">
+    <li class="search-toggle {{if isGames 'active'}}" {{action "toggleSearch" "games"}}>Games</li>
+    <li class="search-toggle {{if isMovies 'active'}}" {{action "toggleSearch" "movies"}}>Movies</li>
+    <li class="search-toggle {{if isTV 'active'}}" {{action "toggleSearch" "tv"}}>TV</li>
+  </ul>
+
+  {{#if isGames}}
+    <div class="search-box">
+      <h2 class="search-header">Search for your favorite games</h2>
+      {{search-field search=(action "searchGames")}}
+    </div>
+  {{else if isMovies}}
+    <div class="search-box">
+      <h2 class="search-header">Search for movies you have watched or liked</h2>
+      {{search-field search=(action "searchMovies")}}
+    </div>
+  {{else}}
+    <div class="search-box">
+      <h2 class="search-header">Search TV shows by title and record your favorite</h2>
+      {{search-field search=(action "searchTV")}}
+    </div>
+  {{/if}}
+</section>
