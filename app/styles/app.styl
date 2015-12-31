@@ -1,4 +1,31 @@
 @require 'infobox'
+@require 'nav'
+
+$blue = #009bdd;
+$light-blue = #34cfff;
+
+.search-area {
+  .search-options {
+    list-style: none;
+    display: inline-block;
+    width: 75%;
+    margin: 0 auto;
+
+    .search-toggle {
+      display: inline-block;
+      font-size: 2rem;
+      padding: 1rem;
+      cursor: pointer;
+      border-right: 1px dotted $blue;
+    }
+    .search-toggle:hover {
+      color: $light-blue;
+    }
+  }
+  .active {
+    color: $blue;
+  }
+}
 
 .search-box {
   width: 100%;
@@ -10,7 +37,7 @@
   }
 
   .search-field {
-    width: 20%;
+    width: 50%;
     margin: 0 auto;
 
     label[for=search] {
@@ -20,14 +47,60 @@
         font-size: 1.4rem;
       }
       button {
-        width: 20%;
+        width: 10%;
         height: 2rem;
+        border: 1px solid $blue;
+        font-size: 1.25rem;
+        color: $blue;
+        background-color: white;
       }
     }
   }
 }
 
+.clearfix {
+  margin: 0;
+  padding: 0;
+}
+
 #game-holder {
   display: block;
   width: 100%;
+}
+
+.ember-application {
+  padding: 0;
+  margin: 0;
+}
+
+#banner-image {
+  width: 100%;
+  height: 25rem;
+  background: url('/images/kart.jpg') no-repeat;
+  margin-top: -3rem;
+
+  .image-container {
+    background-color: rgba(0, 0, 0, 0.7);
+    height: 25rem;
+    width: 100%;
+  }
+
+  .vertical-centered {
+    width: 100%;
+    text-align: center;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .banner-header {
+    padding-top: 3rem;
+    font-size: 4rem;
+    color: white;
+    font-weight: 400;
+    margin-bottom: 0
+  }
+  .banner-sub-header {
+    color: $blue;
+    font-weight: 600;
+    padding-top: 0;
+  }
 }
