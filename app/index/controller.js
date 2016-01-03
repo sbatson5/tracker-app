@@ -2,9 +2,7 @@ import Ember from 'ember';
 
 const {
   Controller,
-  computed,
   computed: { equal },
-  get,
   on,
   set
 } = Ember;
@@ -21,13 +19,13 @@ export default Controller.extend({
 
   actions: {
     searchGames(value) {
-      this.transitionTo('games', value);
+      this.transitionToRoute('games', value);
     },
     searchMovies(value) {
-      this.transitionTo('movies', value);
+      this.transitionToRoute('movies', value);
     },
     searchTV(value) {
-      this.transitionTo('tv', value);
+      this.transitionToRoute('tv', value);
     },
     toggleSearch(value) {
       set(this, 'currentTab', value);

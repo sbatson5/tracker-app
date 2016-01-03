@@ -1,7 +1,19 @@
 .info-box {
   display: inline-block;
   width: 30%;
+  height: 20rem;
   overflow: hidden;
+  background-color: #ddd;
+  border: 1px solid #bbb;
+  transition: width 0.5s;
+
+  +respond-below($md-screen) {
+    width: 45%;
+  }
+
+  +respond-below(600px) {
+    width: 90%;
+  }
 
   h1 {
     width: 100%;
@@ -24,13 +36,8 @@
   }
   .description {
     width: 45%;
-    margin: 0;
+    margin-left: 1rem;
     padding: 0;
     display: inline-block;
-
-    .content {
-      height: 15rem;
-      overflow: hidden;
-    }
   }
 }

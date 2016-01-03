@@ -1,8 +1,17 @@
-@require 'infobox'
-@require 'nav'
-
 $blue = #009bdd;
 $light-blue = #34cfff;
+$md-screen = 1024px;
+
+respond-below($width)
+  media = 'all and (max-width: %s)' % $width
+  @media media
+    {block}
+
+
+respond-above($width)
+  media = 'all and (min-width: %s)' % $width
+  @media media
+    {block}
 
 .search-area {
   .search-options {
@@ -64,8 +73,9 @@ $light-blue = #34cfff;
 }
 
 #game-holder {
-  display: block;
+  display: inline-block;
   width: 100%;
+  margin: 0 2rem;
 }
 
 .ember-application {
@@ -104,3 +114,6 @@ $light-blue = #34cfff;
     padding-top: 0;
   }
 }
+
+@require 'infobox'
+@require 'nav'
